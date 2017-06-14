@@ -1,0 +1,7 @@
+create external table statis_gctongji_binlog(`database` string,`table` string,`op_type` string,timestamp string,xid string,commit string,
+data map<string,string>,
+old map<string,string>)
+partitioned by(dt string ,’type‘ string)
+ROW FORMAT DELIMITED FIELDS TERMINATED BY ‘\u0003’
+COLLECTION ITEMS TERMINATED BY ‘\u0002’ MAP KEYS TERMINATED BY ':'
+location ’/kafkahdfs/statis-gctongji-binlog’;
