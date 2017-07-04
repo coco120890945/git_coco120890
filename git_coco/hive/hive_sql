@@ -1,4 +1,4 @@
-create external table statis_gctongji_binlog(`database` string,`table` string,`op_type` string,timestamp string,xid string,commit string,
+create external table wwn_test(`database` string,`table` string,`op_type` string,timestamp string,xid string,commit string,
 data map<string,string>,
 old map<string,string>)
 partitioned by(dt string ,’type‘ string)
